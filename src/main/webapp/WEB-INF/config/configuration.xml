@@ -1,0 +1,28 @@
+<controllers>
+    <controller className="TestClass" classPackage="com.test.TestClass">
+        <rest path="/getTest" action="GET">
+            <method name="getTest">
+            </method>
+        </rest>
+
+        <rest path="/postTest" action="POST">
+            <method name="postTest">
+            </method>
+        </rest>
+    </controller>
+
+    <controller className="TestClass2" classPackage="com.test.TestClass2">
+        <rest path="/getTest2" action="GET">
+            <method name="getTest2">
+            </method>
+        </rest>
+
+        <rest path="/postTest2" action="POST">
+            <method name="postTest2">
+            </method>
+        </rest>
+    </controller>
+</controllers>
+
+
+
