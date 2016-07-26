@@ -31,61 +31,45 @@ public class DispatcherServlet extends HttpServlet {
         LOG.debug("Execution MethodName: {}", execution.getMethodName());
 
         HandlerControllerImpl handlerController = HandlerMapper.getHandlerController(execution);
+        assert handlerController != null;
         LOG.debug("HandlerControllerImpl getMethod: {}", handlerController.getMethod());
-        try {
-            String result = handlerController.run(req);
 
-            resp.setStatus(PAGE_OK);
-            PrintWriter printWriter = resp.getWriter();
-            LOG.debug("Response print write:{}", printWriter);
-            LOG.debug("Response:{}", resp.toString());
-            resp.getWriter().print(result);
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        String result = handlerController.run(req);
+
+        resp.setStatus(PAGE_OK);
+        PrintWriter printWriter = resp.getWriter();
+        LOG.debug("Response print write:{}", printWriter);
+        LOG.debug("Response:{}", resp.toString());
+        resp.getWriter().print(result);
+
     }
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Execution execution = HandlerMapper.getExecution(req);
         HandlerControllerImpl handlerController = HandlerMapper.getHandlerController(execution);
-        try {
-            String result = handlerController.run(req);
-            resp.getWriter().write(result);
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        assert handlerController != null;
+        String result = handlerController.run(req);
+        resp.getWriter().write(result);
     }
 
     @Override
     public void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Execution execution = HandlerMapper.getExecution(req);
         HandlerControllerImpl handlerController = HandlerMapper.getHandlerController(execution);
-        try {
-            String result = handlerController.run(req);
-            resp.getWriter().write(result);
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        assert handlerController != null;
+        String result = handlerController.run(req);
+        resp.getWriter().write(result);
+
     }
 
     @Override
     public void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Execution execution = HandlerMapper.getExecution(req);
         HandlerControllerImpl handlerController = HandlerMapper.getHandlerController(execution);
-        try {
-            String result = handlerController.run(req);
-            resp.getWriter().write(result);
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        assert handlerController != null;
+        String result = handlerController.run(req);
+        resp.getWriter().write(result);
+
     }
 }

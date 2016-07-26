@@ -18,7 +18,7 @@ public class XmlParser {
     /**
      * @param file - file to be read.
      * @return controllers that were read from xml file.
-     * @throws JAXBException;
+     * @throws JAXBException method can throw JAXBException;
      */
     public static Controllers parseXml(File file) throws JAXBException {
 
